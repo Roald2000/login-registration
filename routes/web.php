@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthManager;
+use App\Http\Controllers\UserProfileController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 /*
@@ -35,7 +36,5 @@ Route::get('/logout', [AuthManager::class, 'logout'])->name('logout');
 //? Routes the authenticated user can access
 Route::group(['middleware' => 'auth'], function () {
     //* Views for user access
-    Route::get('/profile', function () {
-        return auth()->user()->name;
-    });
+    Route::get('/profile',  [UserProfileController::class, 'profile'])->name('profile');
 });

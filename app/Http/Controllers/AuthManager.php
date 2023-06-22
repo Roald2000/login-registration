@@ -39,7 +39,7 @@ class AuthManager extends Controller
             return redirect(route('home'))->with('success', 'Login Success!');
         }
 
-        return redirect(route('login'))->with('error', 'Invalid Credentials!');
+        return redirect(route('login'))->with('error', 'Invalid Email/Password!');
     }
 
 
