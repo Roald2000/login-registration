@@ -21,10 +21,13 @@
                 <span
                     class="peer-focus:-top-1/3 peer-focus:text-xs peer-valid:text-xs peer-valid:-top-1/3 duration-200  absolute font-thin  pointer-events-none top-1/2 -translate-y-1/2 left-2">Password</span>
             </label>
-            <label class="p-2 w-fit cursor-pointer" for="togglecheckbox">
-                <input class="cursor-pointer" type="checkbox" name="" id="togglecheckbox">
-                <span class="cursor-pointer">Show Password</span>
-            </label>
+            <div class="flex flex-row items-center flex-wrap gap-2 justify-between">
+                <label class="p-2 w-fit cursor-pointer flex items-center gap-3" for="togglecheckbox">
+                    <input class="cursor-pointer" type="checkbox" name="" id="togglecheckbox">
+                    <span class="cursor-pointer text-xs font-semibold">Show Password</span>
+                </label>
+                {{-- <a class="text-red-600 text-xs font-semibold" href="{{ route('auth.forgot') }}">Forgot Password</a> --}}
+            </div>
         </div>
         <br>
         <button class="p-2 rounded bg-blue-500 hover:bg-blue-400 text-white" type="submit">Login</button>

@@ -11,7 +11,7 @@
 
 <body>
     @include('include.header')
-    <main class="container mx-auto">
+    <main class="container mx-auto py-4 my-2">
         @yield('content')
     </main>
 </body>

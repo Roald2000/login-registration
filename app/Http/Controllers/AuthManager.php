@@ -15,7 +15,7 @@ class AuthManager extends Controller
         if (Auth::check()) {
             return redirect(route('home'));
         }
-        return view('login');
+        return view('auth.login');
     }
 
     public function registration()
@@ -23,7 +23,7 @@ class AuthManager extends Controller
         if (Auth::check()) {
             return redirect(route('home'));
         }
-        return view('registration');
+        return view('auth.registration');
     }
 
     public function postLogin(Request $request)
@@ -39,7 +39,7 @@ class AuthManager extends Controller
             return redirect(route('home'))->with('success', 'Login Success!');
         }
 
-        return redirect(route('login'))->with('error', 'Invalid Email/Password!');
+        return redirect(route('auth.login'))->with('error', 'Invalid Email/Password!');
     }
 
 
@@ -60,7 +60,7 @@ class AuthManager extends Controller
             return redirect(route('registration'))->with('error', 'Registration Failed! Try again.');
         }
 
-        return redirect(route('login'))->with('succes', 'Registration Success!');
+        return redirect(route('auth.login'))->with('succes', 'Registration Success!');
     }
 
 
@@ -69,6 +69,6 @@ class AuthManager extends Controller
         // Session::flush();
         session()->flush();
         auth()->logout();
-        return redirect(route('login'));
+        return redirect(route('auth.login'));
     }
 }

@@ -52,6 +52,6 @@ class User extends Authenticatable
 
     public function userposts()
     {
-        // We are going to add posts functionality later on
+        return $this->hasMany(UserPosts::class, 'author', 'id')->latest();
     }
 }
